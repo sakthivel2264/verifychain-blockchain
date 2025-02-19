@@ -37,6 +37,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 truffle migrate --network sepolia
 
-transaction hash: 0x5de3ae4f66c5566728a48a565eb996d8929e8d26de9adcc504be9462a6e855cb
+transaction hash: 0x1a3775399a22b79a6847e694ddc5d4c74904aee79e684b81a3b10d6f6c1e2aed
 
-contract: 
+contract: 0x228B01E746138D36BaD2f19E6CCe55C0667b5484
