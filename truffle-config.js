@@ -12,7 +12,7 @@ module.exports = {
       }),
       network_id: 11155111,
       gas: 35000000, // Maximum block limit
-      gasPrice: 20000000000, // 20 Gwei (in wei)
+      gasPrice: 10000000000, // 20 Gwei (in wei)
       confirmations: 2,
       timeoutBlocks: 200,
       skipDryRun: true,
