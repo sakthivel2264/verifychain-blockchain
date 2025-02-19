@@ -11,19 +11,19 @@ const page = () => {
     <div>
       <FloatingNavbar/>
       <div className='min-h-screen pt-10 lg:m-16 m-10 flex justify-center gap-8'>
-        <Card className="flex h-56">
+        <Card className="flex h-32">
           <CardHeader>
             <CardTitle>Manufacturer</CardTitle>
-            <CardDescription></CardDescription>
+            <CardDescription>Create and manage products in your inventory.</CardDescription>
           </CardHeader>
           <CardFooter>
             <Link href={"/manufacturer"}><Button>Go</Button></Link>
           </CardFooter>
         </Card>
-        <Card className="flex h-56">
+        <Card className="flex h-32">
           <CardHeader>
             <CardTitle>Seller</CardTitle>
-            <CardDescription></CardDescription>
+            <CardDescription>Manage product listings and sales.</CardDescription>
           </CardHeader>
           <CardFooter>
           <Link href={"/seller"}><Button>Go</Button></Link>
@@ -34,4 +34,4 @@ const page = () => {
   )
 }
 
-export default page
+export default page;

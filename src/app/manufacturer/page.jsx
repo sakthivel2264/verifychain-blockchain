@@ -246,8 +246,8 @@ const SellProducts = () =>{
 }
 
 const menuItems = [
+  { name: "Products List", icon: <Package className="w-5 h-5" />, component: <ProductList/> },
     { name: "Seller List", icon: <Home className="w-5 h-5" />, component: <SellerList/> },
-    { name: "Products List", icon: <Package className="w-5 h-5" />, component: <ProductList/> },
     { name: "Sell Product to Seller", icon: <Settings className="w-5 h-5" />, component: <SellProducts/> },
   ];
 
