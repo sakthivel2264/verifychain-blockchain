@@ -13,14 +13,14 @@ export default function LandingPage() {
   const handleInitialize = async () =>{
     const response = await initializeContract()
     if(response){
-      router.push("/getstarted")
+      router.push(`/getstarted?address=${response.account}`)
     }
     console.log(response)
   }
   const handleInitialize2 = async () =>{
     const response = await initializeContract()
     if(response){
-      router.push("/verify")
+      router.push(`/verify?address=${response.account}`)
     }
     console.log(response)
   }

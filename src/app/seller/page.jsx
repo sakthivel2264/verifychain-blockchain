@@ -15,7 +15,22 @@ const SellProducts = () =>{
     const [customer, setCustomer] = useState("");
   const [productSN, setProductSN] = useState("");
 
+  function addCustomerAddress(customerAddress) {
+    let customerAddresses = localStorage.getItem('customerAddresses');
+
+    if (customerAddresses) {
+        customerAddresses = JSON.parse(customerAddresses);
+    } else {
+        customerAddresses = [];
+    }
+
+    customerAddresses.push(customerAddress);
+
+    localStorage.setItem('customerAddresses', JSON.stringify(customerAddresses));
+}
+
   const handleSubmit = async () => {
+    addCustomerAddress(customer);
     await sellersellproduct(productSN, customer);
   };
 

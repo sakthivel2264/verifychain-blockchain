@@ -32,6 +32,25 @@ export const initializeContract = async () => {
   }
 };
 
+/**
+ * @param {string} Address
+ * @returns {Promise<void>}
+ * 
+ */
+ export const GetRole = async (Address) => {
+  if(!contract){
+    console.log("Contract not initialized")
+  }
+  try{
+    const response = await contract.methods.getRole(Address).call();
+    return response;
+  }catch(error){
+    console.log("Error in getting Role", error)
+  }
+}
+ 
+
+
 
 /**
  * @param {string}  manufacturerId

@@ -186,4 +186,28 @@ contract Product is AccessControl {
     function verifyProduct(string memory _productSN, string memory _consumerCode) public view returns (bool) {
         return keccak256(abi.encodePacked(productsSold[_productSN])) == keccak256(abi.encodePacked(_consumerCode));
     }
+
+    // Check Role of an Address
+    function getRole(address account) public view returns (string memory) {
+        if (hasRole(MANUFACTURER, account)) {
+            return "Manufacturer";
+        }
+        
+        for (uint256 i = 0; i < sellerCount; i++) {
+            if (keccak256(abi.encodePacked(sellers[i].sellerAddress)) == keccak256(abi.encodePacked(account))) {
+                return "Seller";
+            }
+        }
+
+        for (uint256 i = 0; i < productCount; i++) {
+            string memory accountStr = string(abi.encodePacked(account));
+            for (uint256 j = 0; j < productsWithConsumer[accountStr].length; j++) {
+                if (keccak256(abi.encodePacked(productsWithConsumer[accountStr][j])) == keccak256(abi.encodePacked(productItems[i].productSN))) {
+                    return "Customer";
+                }
+            }
+        }
+
+        return "Unknown";
+    }
 }

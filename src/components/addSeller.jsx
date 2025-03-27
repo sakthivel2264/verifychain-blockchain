@@ -30,10 +30,25 @@ const AddSellerComponent = () => {
 
       const [loading, setLoading] = useState(false);
 
+      function addSellerAddress(sellerAddress) {
+        let sellerAddresses = localStorage.getItem('sellerAddresses');
+    
+        if (sellerAddresses) {
+            sellerAddresses = JSON.parse(sellerAddresses);
+        } else {
+            sellerAddresses = [];
+        }
+    
+        sellerAddresses.push(sellerAddress);
+    
+        localStorage.setItem('sellerAddresses', JSON.stringify(sellerAddresses));
+    }
+
   const onSubmit = async (data) => {
     setLoading(true);
     try {
       console.log(data)
+      addSellerAddress(data.sellerAddress);
       await AddSeller(data);
       alert("Seller added successfully!");
     } catch (error) {
